@@ -1,5 +1,8 @@
+"use client";
+
 import Link from 'next/link';
 import { Linkedin, Instagram, MessageCircle, Mail } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 const socialLinks = [
   { href: 'https://linkedin.com', icon: Linkedin, label: 'LinkedIn' },
@@ -9,6 +12,12 @@ const socialLinks = [
 ];
 
 export function Footer() {
+  const [year, setYear] = useState<number | string | null>(null);
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
+
   return (
     <footer className="bg-secondary py-8">
       <div className="container mx-auto max-w-screen-xl px-4 text-center">
@@ -27,7 +36,7 @@ export function Footer() {
           ))}
         </div>
         <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Tech Sentinel Hub. All rights reserved.
+          © {year !== null ? year : "..."} Tech Sentinel Hub. All rights reserved.
         </p>
         <p className="text-xs text-muted-foreground/70 mt-1">
           Innovate. Collaborate. Inspire.
