@@ -20,8 +20,15 @@ export function HeroSection() {
     return () => clearInterval(interval);
   }, []);
 
+  const scrollToAbout = () => {
+    const whatWeDo = document.getElementById('what-we-do');
+    if (whatWeDo) {
+      whatWeDo.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section id="home" className="py-20 md:py-32 bg-background">
+    <section id="home" className="py-20 md:py-32 bg-background relative">
       <div className="container mx-auto max-w-screen-xl px-4">
         <div className="grid md:grid-cols-2 gap-20 items-center">
           <div className="flex justify-center md:justify-center animate-fadeIn">
@@ -49,9 +56,14 @@ export function HeroSection() {
                 <Link href="#events">Upcoming Events</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="transition-transform hover:scale-105">
-                <Link href="#about">Learn More</Link>
+                <Link href="#what-we-do">Learn More</Link>
               </Button>
             </div>
+          </div>
+        </div>
+        <div className="container_mouse" onClick={scrollToAbout}>
+          <div className="mouse-btn">
+            <div className="mouse-scroll"></div>
           </div>
         </div>
       </div>
