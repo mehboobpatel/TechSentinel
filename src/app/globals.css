@@ -2,14 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'PT Sans', sans-serif;
 }
 
+/* Navbar Link Transitions */
+.nav-link {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: rgb(126 100 237);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
 @layer base {
   :root {
-    --background: 0 0% 94%; /* #F0F0F0 Light Grey */
-    --foreground: 222.2 47.4% 11.2%; /* Dark Blue-Grey for readability */
+    --background: 240 5% 3%; /* #09090b */
+    --foreground: 240 1% 62%; /* #9d9d9e */
 
     --card: 0 0% 100%; /* White cards */
     --card-foreground: 222.2 47.4% 11.2%;
@@ -20,13 +49,13 @@ body {
     --primary: 197 71% 52%; /* #29ABE2 Vibrant Blue */
     --primary-foreground: 0 0% 100%; /* White */
 
-    --secondary: 210 40% 96.1%; /* Lighter Blue/Grey */
+    --secondary: 240 5% 3%; /* Lighter Blue/Grey */
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215 20.2% 65.1%; /* Lighter grey text */
 
-    --accent: 120 73% 75%; /* #90EE90 Bright Green */
+    --accent: 360 100% 100%; /* #90EE90 Bright Green */
     --accent-foreground: 120 25% 10%; /* Darker Green for contrast */
 
     --destructive: 0 84.2% 60.2%;
@@ -106,5 +135,104 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+.text-gradient-blue-purple {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  --tw-gradient-from: #4474eb var(--tw-gradient-from-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #7e64ed var(--tw-gradient-via-position), var(--tw-gradient-to);
+  --tw-gradient-to: #7e64ed var(--tw-gradient-to-position);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.text-kubePurple {
+  --tw-text-opacity: 1;
+  color: rgb(126 100 237 / var(--tw-text-opacity, 1));
+}
+
+.bg-kubePurple {
+  --tw-bg-opacity: 1;
+  background-color: rgb(126 100 237 / var(--tw-bg-opacity, 1));
+}
+
+.bg-kubePurple\/30 {
+  --tw-bg-opacity: 0.3;
+  background-color: rgb(126 100 237 / var(--tw-bg-opacity, 1));
+}
+
+.bg-kubePurple30 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(126 100 237 / var(--tw-bg-opacity, 1));
+}
+
+/* Scroll Button Styles */
+.container_mouse {
+  text-align: center;
+  color: rgb(126 100 237);
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+  position: absolute;
+  bottom: -3rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.container_mouse:hover {
+  transform: translateX(-50%) translateY(5px);
+  opacity: 1;
+}
+
+.container_mouse .mouse-btn {
+  margin: 0 auto;
+  width: 24px;
+  height: 40px;
+  border: 1.5px solid rgba(126, 100, 237, 0.5);
+  border-radius: 15px;
+  display: flex;
+  box-shadow: 0 0 10px rgba(126, 100, 237, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.container_mouse .mouse-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(126, 100, 237, 0.05) 0%, rgba(126, 100, 237, 0) 100%);
+  pointer-events: none;
+}
+
+.container_mouse .mouse-btn .mouse-scroll {
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: rgba(126, 100, 237, 0.7);
+  border-radius: 50%;
+  margin: auto;
+  animation: scrolling 1.5s ease-in-out infinite;
+  box-shadow: 0 0 6px rgba(126, 100, 237, 0.3);
+}
+
+@keyframes scrolling {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(8px);
   }
 }

@@ -2,7 +2,7 @@ import { Navbar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import { HeroSection } from '@/components/sections/hero-section';
 import { AboutUsSection } from '@/components/sections/about-us-section';
-import { TeamSection } from '@/components/sections/team-section';
+import { WhatWeDoSection } from '@/components/sections/what-we-do-section';
 import { EventsSection } from '@/components/sections/events-section';
 import { SponsorsSection } from '@/components/sections/sponsors-section';
 
@@ -12,8 +12,8 @@ export default function HomePage() {
       <Navbar />
       <main className="flex-grow">
         <HeroSection />
+        <WhatWeDoSection />
         <AboutUsSection />
-        <TeamSection />
         <EventsSection />
         <SponsorsSection />
       </main>
