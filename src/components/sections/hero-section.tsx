@@ -1,69 +1,30 @@
-"use client";
-
-import Image from 'next/image';
+import { ShieldHalf } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 
 export function HeroSection() {
-  const [changingText, setChangingText] = useState('Cloud');
-  const texts = ['Cloud', 'Devops', 'Artificial Intelligence', 'Cybersecurity'];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setChangingText((prev) => {
-        const currentIndex = texts.indexOf(prev);
-        const nextIndex = (currentIndex + 1) % texts.length;
-        return texts[nextIndex];
-      });
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const scrollToAbout = () => {
-    const whatWeDo = document.getElementById('what-we-do');
-    if (whatWeDo) {
-      whatWeDo.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <section id="home" className="py-20 md:py-32 bg-background relative">
+    <section id="home" className="py-20 md:py-32 bg-background">
       <div className="container mx-auto max-w-screen-xl px-4">
-        <div className="grid md:grid-cols-2 gap-20 items-center">
-          <div className="flex justify-center md:justify-center animate-fadeIn">
-            <Image
-              src="/assets/img.jpeg"
-              alt="Tech Conference"
-              width={600}
-              height={400}
-              className="rounded-lg shadow-xl"
-            />
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="flex justify-center md:justify-start animate-fadeIn">
+            <ShieldHalf className="h-48 w-48 md:h-64 md:w-64 text-primary drop-shadow-lg" />
           </div>
           <div className="text-center md:text-left animate-slideUp">
-            <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-              <span className="text-white">Join us in learning</span>
-              <br />
-              <span className="text-gradient-blue-purple">{changingText}</span>
-              <br />
-              <span className="text-white">with TechSentinals</span>
+            <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4">
+              Tech Sentinel Hub
             </h1>
             <p className="text-lg md:text-xl text-foreground/80 mb-8">
               Your gateway to innovation, collaboration, and the future of technology. Join our community of passionate learners and builders.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <Button asChild size="lg" className="transition-transform hover:scale-105 bg-kubePurple hover:bg-kubePurple text-white">
+              <Button asChild size="lg" className="transition-transform hover:scale-105">
                 <Link href="#events">Upcoming Events</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="transition-transform hover:scale-105">
-                <Link href="#what-we-do">Learn More</Link>
+                <Link href="#about">Learn More</Link>
               </Button>
             </div>
-          </div>
-        </div>
-        <div className="container_mouse" onClick={scrollToAbout}>
-          <div className="mouse-btn">
-            <div className="mouse-scroll"></div>
           </div>
         </div>
       </div>
