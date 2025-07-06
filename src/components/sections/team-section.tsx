@@ -12,25 +12,32 @@ interface TeamMember {
 
 const teamMembers: TeamMember[] = [
   {
-    name: 'John Doe',
-    role: 'Lead Organizer',
-    imageUrl: 'https://placehold.co/400x400.png',
-    linkedinUrl: 'https://linkedin.com',
+    name: 'Salahuddin Shaikh',
+    role: 'SRE @ Epam Systems',
+    imageUrl: '/assets/salahuddin.jpeg',
+    linkedinUrl: 'https://www.linkedin.com/in/salahuddin-shaikh-5b4bba138/',
     twitterUrl: 'https://twitter.com'
   },
   {
-    name: 'Jane Smith',
-    role: 'Technical Lead',
-    imageUrl: 'https://placehold.co/400x400.png',
+    name: 'Asmita Khuspe',
+    role: 'Cloud Engineer @ LTIMindtree',
+    imageUrl: '/assets/asmita.jpeg',
     linkedinUrl: 'https://linkedin.com',
-    twitterUrl: 'https://twitter.com'
+    twitterUrl: ''
   },
   {
-    name: 'Mike Johnson',
-    role: 'Community Manager',
-    imageUrl: 'https://placehold.co/400x400.png',
+    name: 'Mehboob Patel',
+    role: 'Cloud Engineer @ LTIMindtree',
+    imageUrl: '/assets/mehboob.jpeg',
     linkedinUrl: 'https://linkedin.com',
-    twitterUrl: 'https://twitter.com'
+    twitterUrl: ''
+  },
+  {
+    name: 'Abhishek Mankuskar',
+    role: 'Software Engineer @ Medidhifts',
+    imageUrl: '/assets/abhishek.jpeg',
+    linkedinUrl: 'https://www.linkedin.com/in/abhishek-mankuskar-03790018b',
+    twitterUrl: ''
   }
 ];
 
@@ -72,14 +79,16 @@ export function TeamSection() {
                   >
                     <Linkedin className="h-5 w-5" />
                   </a>
-                  <a
-                    href={member.twitterUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white/70 hover:text-kubePurple transition-colors"
-                  >
-                    <Twitter className="h-5 w-5" />
-                  </a>
+                  {member.twitterUrl && (
+                    <a
+                      href={member.twitterUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white/70 hover:text-kubePurple transition-colors"
+                    >
+                      <Twitter className="h-5 w-5" />
+                    </a>
+                  )}
                 </div>
               </CardContent>
             </Card>

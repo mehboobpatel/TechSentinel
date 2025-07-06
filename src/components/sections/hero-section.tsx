@@ -33,11 +33,12 @@ export function HeroSection() {
         <div className="grid md:grid-cols-2 gap-20 items-center">
           <div className="flex justify-center md:justify-center animate-fadeIn">
             <Image
-              src="/assets/img.jpeg"
-              alt="Tech Conference"
+              src="/assets/event.jpeg"
+              alt="Tech Conference Event"
               width={600}
               height={400}
               className="rounded-lg shadow-xl"
+              style={{ objectFit: 'cover', width: '1200px', height: '400px' }}
             />
           </div>
           <div className="text-center md:text-left animate-slideUp">

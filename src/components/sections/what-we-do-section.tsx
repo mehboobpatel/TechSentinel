@@ -1,37 +1,36 @@
 "use client";
 
-import { Cloud, Code2, Container, Database, GitBranch, Brain, DollarSign } from 'lucide-react';
+import { Cloud, Code2, Container, Database, GitBranch, Brain, DollarSign, Zap } from 'lucide-react';
 
 const technologies = [
   {
     icon: Cloud,
     name: 'Cloud',
-    description: 'Master cloud platforms like AWS, Azure, and GCP. Learn cloud architecture, serverless computing, and cloud-native development practices.'
+    description: `Learn how AWS, GCP, and Azure are used in real projects. Not just console walkthroughs, but how companies actually use them.`
   },
   {
-    icon: DollarSign,
-    name: 'FinOps',
-    description: 'Master cloud financial management, cost optimization, and resource allocation. Learn to balance performance and cost in cloud environments.'
-  },
+    icon: Brain,
+    name: 'Generative AI & LLMs',
+    description: `How do tools like ChatGPT work under the hood? What's RAG? How do you build with open-source models? We get into it.`  },
   {
     icon: Code2,
-    name: 'Development',
-    description: 'Modern web development with React, Next.js, and TypeScript. Build scalable, performant applications with best practices.'
+    name: 'Full Stack Development',
+    description: `Frontend, backend, APIs, databases — how it all connects. We host live demos, not just slides.`
   },
   {
     icon: GitBranch,
     name: 'DevOps',
-    description: 'Master CI/CD pipelines, infrastructure automation, and DevOps tools like Docker, Jenkins, and Terraform for efficient development.'
+    description: `Understand why CI/CD, Docker, and GitHub Actions are more than just buzzwords. We show you how teams automate and deploy daily.`
   },
   {
-    icon: Brain,
-    name: 'Agentic AI',
-    description: 'Explore the future of AI with autonomous agents, LLMs, and AI-powered development tools. Learn to build and integrate AI systems.'
-  },
+    icon: Zap,
+    name: 'AI/ML',
+    description: `Basics to real use-cases. What's an ML model? How are companies using GenAI? We break it down in a way that sticks.`
+    },
   {
-    icon: Database,
-    name: 'Data',
-    description: 'Explore database technologies, data modeling, and data management strategies for modern applications and analytics.'
+    icon: Container,
+    name: 'Kubernetes & Infra',
+    description: `If you've heard of k8s but never touched it, we'll get you started.`
   }
 ];
 
